@@ -25,12 +25,13 @@ public class MyInteger {
 	
 	//Determines if iValue is prime
 	public static boolean isPrime(){
-		int temp = 0;
-		for(temp = 2; temp <= iValue / 2; temp++){
-			if(iValue % temp != 0)
-				return true;
-		}
-		return false;
+		if (iValue % 2 == 0) 
+			return false;
+        for (int temp = 3; temp * temp < iValue; temp += 2)
+            if (iValue % temp == 0)
+            	return false;
+        return true;
+		
 	}
 	
 	//Determines if integer is even
@@ -45,15 +46,12 @@ public class MyInteger {
 	
 	//Determines if integer is prime
 	public static boolean isPrime(int iValue){
-		if(iValue == 2){
-			return true;
-		}
-		int temp = 0;
-		for(temp = 2; temp <= iValue / 2; temp++){
-			if(iValue % temp != 0)
-				return true;	
-		}
-		return false;
+		if (iValue % 2 == 0) 
+			return false;
+        for (int temp = 3; temp * temp < iValue; temp += 2)
+            if (iValue % temp == 0)
+            	return false;
+        return true;
 	}
 	
 	//Determines if MyInteger value is even
@@ -73,7 +71,7 @@ public class MyInteger {
 	
 	//Determines if integer is equal to another iValue
 	public static boolean isEqual(int newValue){
-		return iValue == newValue;
+		return (iValue == newValue) ? true : false;
 	}
 	
 	//Determines if MyInteger value is equal to another iValue
